@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-white text-slate-900 antialiased selection:bg-blue-500/30;
+  }
+}
+
+.hero-bg {
+  @apply bg-[#0A101E] text-white;
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 70px 70px;
+}
