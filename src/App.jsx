@@ -1,14 +1,14 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar'
+import Hero from './sections/Hero'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-    </>
+    <div className="min-h-screen flex flex-col relative overflow-hidden">
+      <Navbar />
+      <main className="flex-grow"> 
+        <Hero />
+      </main>
+    </div>
   )
 }
 
