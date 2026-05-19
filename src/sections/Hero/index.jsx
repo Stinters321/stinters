@@ -7,7 +7,7 @@ import ServiceTicker from './components/ServiceTicker';
 const Hero = () => {
   return (
     // Applied the specific hero-bg class here instead of global body
-    <section className="relative w-full hero-bg pt-28 flex flex-col justify-between min-h-screen">
+    <section className="relative w-full hero-bg pt-28 flex flex-col justify-between min-h-screen" id='Hero'>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 flex-grow flex items-center w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
           

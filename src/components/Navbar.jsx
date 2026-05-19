@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, HelpCircle, Handshake, FileText, Factory, Wrench } from 'lucide-react';
 import Button from './Button';
+import Logo from '/logo.png'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,8 +32,9 @@ const Navbar = () => {
         
         {/* Logo Section */}
         <div className="flex flex-col">
-          <span className="text-2xl font-black text-white tracking-tight">STINTERS</span>
-          <span className="text-[0.55rem] text-[#4E545C] tracking-widest font-medium uppercase mt-0.5">MRO · Facility · On-Demand Spares</span>
+          {/* <span className="text-2xl font-black text-white tracking-tight">STINTERS</span> */}
+          <img src={Logo} alt="Stintus logo" className='h-20 w-32'/>
+          {/* <span className="text-[0.55rem] text-[#4E545C] tracking-widest font-medium uppercase mt-0.5">MRO · Facility · On-Demand Spares</span> */}
         </div>
 
         {/* Desktop Navigation */}

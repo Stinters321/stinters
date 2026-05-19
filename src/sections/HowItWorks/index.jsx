@@ -31,7 +31,7 @@ const HowItWorks = () => {
 
   return (
     // Matching the dark background from the Hero section
-    <section className="py-20 bg-[#0A101E]">
+    <section className="py-20 bg-[#0A101E]" id='HowItWorks'>
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

@@ -1,5 +1,6 @@
 import { MailIcon } from "lucide-react"
 import Button from "./Button"
+import Logo from '/logo.png'
 
 const FSocial=({text})=>{
     return(
@@ -12,18 +13,18 @@ const FSocial=({text})=>{
 const Footer = () => {
 
     const servicesData=[
-        {name:'MRO Services',route:'#'},
-        {name:'Electrical Work',route:'#'},
-        {name:'Facility Management',route:'#'},
-        {name:'Civil and Structural',route:'#'},
-        {name:'On-Demand Spares',route:'#'}]
+        {name:'MRO Services',route:'#WhatWeCover'},
+        {name:'Electrical Work',route:'#WhatWeCover'},
+        {name:'Facility Management',route:'#WhatWeCover'},
+        {name:'Civil and Structural',route:'#WhatWeCover'},
+        {name:'On-Demand Spares',route:'#WhatWeCover'}]
 
     const companySectionData=[
-        {name:'About Us',route:'#'},
-        {name:'How it works',route:'#'},
-        {name:'Industries',route:'#'},
-        {name:'Become a Vendor',route:'#'},
-        {name:'FAQ',route:'#'}
+        {name:'About Us',route:'#Hero'},
+        {name:'How it works',route:'#HowItWorks'},
+        {name:'Industries',route:'#Industries'},
+        {name:'Become a Vendor',route:'#BecomeVendor'},
+        {name:'FAQ',route:'#Faq'}
     ]
     return (
         <div className="flex flex-col h-max w-screen bg-[#0d1420]">
@@ -33,7 +34,8 @@ const Footer = () => {
                     {/* Grid items */}
                     {/* Initial */}
                     <div className="flex flex-col text-white/40 gap-2">
-                        <p className="font-['Sora'] font-bold text-white">STINT<span className="text-blue-500">ERS</span></p>
+                        {/* <p className="font-['Sora'] font-bold text-white">STINT<span className="text-blue-500">ERS</span></p> */}
+                        <img src={Logo} alt="Stintus logo" className='h-20 w-32'/>
                         <p className="text-[9px] text-white/22">MRO · Facility Management · On-Demand Spares</p>
                         <p className="text-xs w-[62%] text-white/27">Connecting Indian manufacturing businesses with verified vendors — faster, smarter, with full visibility. Serving Industrial Gujarat.</p>
                         <div className="flex items-center gap-2">
