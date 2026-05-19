@@ -13,13 +13,13 @@ const HowItWorks = () => {
       stepNumber: '2',
       emoji: '🎯',
       title: 'We Match the Right Vendor',
-      description: 'Our team assigns a verified vendor matched to your job, location, and urgency — under 6 hours.'
+      description: 'Our team assigns a verified vendor matched to your job, location, and urgency - under 6 hours.'
     },
     {
       stepNumber: '3',
       emoji: '📊',
       title: 'Compare Multiple Quotes',
-      description: 'Receive quotes side by side — pricing and timelines. You decide. No pressure.'
+      description: 'Receive quotes side by side - pricing and timelines. You decide. No pressure.'
     },
     {
       stepNumber: '4',
@@ -31,7 +31,7 @@ const HowItWorks = () => {
 
   return (
     // Matching the dark background from the Hero section
-    <section className="py-20 bg-[#0A101E]">
+    <section className="py-20 bg-[#0A101E]" id='HowItWorks'>
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

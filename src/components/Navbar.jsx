@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, HelpCircle, Handshake, FileText, Factory, Wrench } from 'lucide-react';
 import Button from './Button';
+import Logo from '/logo.png'
 
-const Navbar = () => {
+const Navbar = ({openModal,openAuth}) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -13,12 +14,12 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Services', icon: Wrench },
-    { name: 'Industries', icon: Factory },
-    { name: 'How It Works', icon: FileText },
-    { name: 'Vendors', icon: Handshake },
-    { name: 'FAQ', icon: HelpCircle },
-    { name: 'Contact', icon: Phone },
+    { name: 'Services', icon: Wrench, route:'#Services' },
+    { name: 'Industries', icon: Factory,route:'#Industries' },
+    { name: 'How It Works', icon: FileText,route:'#HowItWorks' },
+    { name: 'Vendors', icon: Handshake,route:'#VendorSection' },
+    { name: 'FAQ', icon: HelpCircle,route:'#Faq' },
+    { name: 'Contact', icon: Phone,route:'#Cta' },
   ];
 
   return (
@@ -31,22 +32,21 @@ const Navbar = () => {
         
         {/* Logo Section */}
         <div className="flex flex-col">
-          <span className="text-2xl font-black text-white tracking-tight">STINTERS</span>
-          <span className="text-[0.55rem] text-[#4E545C] tracking-widest font-medium uppercase mt-0.5">MRO · Facility · On-Demand Spares</span>
+          <img src={Logo} alt="Stintus logo" className='h-14 w-52'/>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8">
           <div className="flex gap-6">
-            {['Services', 'Industries', 'How It Works', 'Vendors', 'FAQ', 'Contact'].map((item) => (
-              <a key={item} href="#" className="px-2 py-1 rounded-lg text-sm font-medium text-[#81858B] hover:text-white hover:bg-[#1A1D23] transition-all duration-300">
-                {item}
+            {navLinks.map((item) => (
+              <a key={item.name} href={item.route} className="px-2 py-1 rounded-lg text-sm font-medium text-[#81858B] hover:text-white hover:bg-[#1A1D23] transition-all duration-300">
+                {item.name}
               </a>
             ))}
           </div>
           <div className="flex items-center gap-4">
-            <Button variant="outline" className="text-sm">Sign In</Button>
-            <Button variant="primary" className="text-sm">Submit Requirement</Button>
+            <Button variant="outline" className="text-sm" onClick={openAuth}>Sign In</Button>
+            <Button variant="primary" className="text-sm" onClick={()=>openModal("General Requirement")}>Submit Requirement</Button>
           </div>
         </nav>
 
@@ -67,7 +67,7 @@ const Navbar = () => {
         <div className="fixed inset-0 z-[60] bg-[#0A101E] p-4 flex flex-col">
           <div className="flex justify-between items-center mb-8">
              <div className="flex flex-col">
-              <span className="text-2xl font-black text-white">STINTERS</span>
+              <span className="text-2xl font-black text-white">Stintus</span>
             </div>
             <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 bg-[#162032] border border-slate-700 rounded-md text-slate-300">
               <X size={20} />

@@ -33,7 +33,7 @@ const StepByStep = () => {
         {
             number: '4',
             title: 'Quotes Arrive to Compare',
-            description: 'Multiple quotes with pricing and timelines — all in one place.'
+            description: 'Multiple quotes with pricing and timelines - all in one place.'
         },
         {
             number: '5',
@@ -49,7 +49,7 @@ const StepByStep = () => {
 
 
     return (
-        <div className="flex flex-col items-center h-max w-screen bg-[#131C2E]">
+        <div className="flex flex-col items-center h-max w-screen bg-[#131C2E]" id="StepByStep">
             {/* Main Container */}
             <div className="px-4 py-20 max-w-290 border-b border-white/6">
                 {/* Text Section */}

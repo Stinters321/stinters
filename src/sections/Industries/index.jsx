@@ -20,7 +20,7 @@ const Industries = () => {
 
   return (
     <section className="py-24 bg-white relative">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8" id='Industries'>
         
         {/* Left-Aligned Section Header (matching Image 1) */}
         <div className="mb-12">
