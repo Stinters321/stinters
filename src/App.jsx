@@ -8,6 +8,7 @@ import Footer from './components/Footer'
 import WhyStinters from './sections/WhyStinters'
 import StepByStep from './sections/StepByStep'
 import FAQSection from './sections/FAQ'
+import ServicesSection from './sections/Services'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Hero />
         <Challenge />
         <HowItWorks />
+        <ServicesSection />
         <Industries />
         <WhyStinters />
         <StepByStep />
