@@ -35,7 +35,7 @@ const WhyStintus = () => {
         number:'04',
         icon:<svg width="16" height="16" viewBox="0 0 20 20" className="fill-blue-500"><path fillRule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2z"></path></svg>,
         title:'Built for Your Industry',
-        description:"Designed for plant managers who need speed and clarity — not complexity."
+        description:"Designed for plant managers who need speed and clarity - not complexity."
     },
     {
         number:'05',
@@ -47,7 +47,7 @@ const WhyStintus = () => {
         number:'06',
         icon:<svg width="16" height="16" viewBox="0 0 20 20" className="fill-blue-500"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1z"></path></svg>,
         title:'Your Team Gets Time Back',
-        description:"Engineers fix machines, not vendor relationships. Submit once — we handle the rest."
+        description:"Engineers fix machines, not vendor relationships. Submit once - we handle the rest."
     }
 ]
     return (

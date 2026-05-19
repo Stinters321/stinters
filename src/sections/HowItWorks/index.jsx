@@ -13,13 +13,13 @@ const HowItWorks = () => {
       stepNumber: '2',
       emoji: '🎯',
       title: 'We Match the Right Vendor',
-      description: 'Our team assigns a verified vendor matched to your job, location, and urgency — under 6 hours.'
+      description: 'Our team assigns a verified vendor matched to your job, location, and urgency - under 6 hours.'
     },
     {
       stepNumber: '3',
       emoji: '📊',
       title: 'Compare Multiple Quotes',
-      description: 'Receive quotes side by side — pricing and timelines. You decide. No pressure.'
+      description: 'Receive quotes side by side - pricing and timelines. You decide. No pressure.'
     },
     {
       stepNumber: '4',

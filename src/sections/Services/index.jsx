@@ -7,7 +7,7 @@ const SERVICE_PANELS = {
     { ico: "📋", color: "bg-gradient-to-br from-green-50 to-green-100", title: "Preventive Maintenance", tags: ["AMC Contract","Scheduled PM","Machine Inspection","Predictive Maintenance"] },
     { ico: "🚨", color: "bg-gradient-to-br from-red-50 to-red-100", title: "Emergency Breakdown", tags: ["Emergency Repair","On-Site Technician","Line Down Support","Machinery Repair"] },
     { ico: "🖨️", color: "bg-gradient-to-br from-purple-50 to-purple-100", title: "Specialist Equipment", tags: ["Printer Repairs","AC Repairs","Power Generation","Field Service"] },
-    { custom: true, label: "Custom Requirement", sub: "Describe anything — we find the right vendor", modal: "Custom MRO Requirement" },
+    { custom: true, label: "Custom Requirement", sub: "Describe anything - we find the right vendor", modal: "Custom MRO Requirement" },
   ],
   elec: [
     { ico: "⚡", color: "bg-gradient-to-br from-amber-50 to-amber-100", title: "Electrical Work & Repairs", tags: ["Single Phase Work","Three Phase Work","Electric Machine Service","Electro Mechanical"] },
@@ -46,7 +46,7 @@ const ServicesSection = ({ openModal }) => {
     const tabs = [["mro", "🔧", "MRO"], ["elec", "⚡", "Electrical"], ["facility", "🏢", "Facility"], ["civil", "🏗️", "Civil & Structural"], ["spares", "🔩", "On-Demand Spares"]];
 
     return (
-        <section id="services" className="bg-slate-50" style={{ padding: "88px 0" }}>
+        <section id="Services" className="bg-slate-50" style={{ padding: "88px 0" }}>
             <div className="max-w-[1160px] mx-auto px-7">
                 <div className="flex items-end justify-between gap-5 mb-7 flex-wrap">
                     <div>
@@ -55,7 +55,7 @@ const ServicesSection = ({ openModal }) => {
                             WHAT WE COVER
                         </div>
                         <h2 className="sora font-bold text-slate-900" style={{ fontSize: "clamp(1.6rem,2.8vw,2.4rem)", letterSpacing: "-.022em" }}>Every Industrial Need. One Platform.</h2>
-                        <p className="dm text-slate-500 mt-1.5 max-w-[400px]" style={{ fontSize: ".94rem" }}>Tap any service to open a focused requirement form — pre-filled and ready.</p>
+                        <p className="dm text-slate-500 mt-1.5 max-w-[400px]" style={{ fontSize: ".94rem" }}>Tap any service to open a focused requirement form - pre-filled and ready.</p>
                     </div>
                     <div className="inline-flex items-center gap-1.5 sora font-semibold text-blue-500 px-3 py-1.5 rounded-lg whitespace-nowrap" style={{ fontSize: ".74rem", background: "#EBF3FE", border: "1px solid rgba(43,128,237,.2)" }}>
                         <svg width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M12 8v4M12 16h.01" /></svg>
@@ -105,7 +105,7 @@ const ServicesSection = ({ openModal }) => {
                         <div className="rounded-xl p-5 flex items-center justify-between gap-4 mt-3" style={{ background: "linear-gradient(135deg,#131C2E 0%,#1a2540 100%)" }}>
                             <div>
                                 <h3 className="sora font-bold text-white text-sm mb-1">Don't See Your Requirement?</h3>
-                                <p className="dm text-white/42" style={{ fontSize: ".79rem" }}>Submit anything — our team sources the right vendor for any industrial need.</p>
+                                <p className="dm text-white/42" style={{ fontSize: ".79rem" }}>Submit anything - our team sources the right vendor for any industrial need.</p>
                             </div>
                             <button onClick={() => openModal("Custom Requirement")} className="flex-shrink-0 sora font-bold text-white px-5 py-2.5 rounded-xl transition-all hover:bg-white/15 whitespace-nowrap" style={{ background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.18)", fontSize: ".86rem" }}>
                                 Submit Custom Requirement →

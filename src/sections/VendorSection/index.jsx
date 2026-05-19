@@ -14,7 +14,7 @@ const VendorSection = ({ openAuth }) => (
           <h2 className="sora font-bold text-white mb-2" style={{fontSize:"clamp(1.6rem,2.8vw,2.4rem)",letterSpacing:"-.022em"}}>Join the Stintus Vendor Network</h2>
           <p className="dm text-white/58 mb-5.5" style={{fontSize:".95rem",marginBottom:22}}>Stop cold-calling for work. Get qualified industrial requirements from plants actively looking for what you do.</p>
           <ul className="list-none flex flex-col gap-2.5 mb-6">
-            {["Receive verified MRO, facility, and spares enquiries from real industrial plants","Expand your reach to SMEs and MSMEs across Gujarat and India","Manage all quotations and job status fully online — no paperwork","Build a verifiable track record and grow through real client references"].map((item,i)=>(
+            {["Receive verified MRO, facility, and spares enquiries from real industrial plants","Expand your reach to SMEs and MSMEs across Gujarat and India","Manage all quotations and job status fully online - no paperwork","Build a verifiable track record and grow through real client references"].map((item,i)=>(
               <li key={i} className="flex items-start gap-2.5 dm font-medium text-white/70" style={{fontSize:".85rem"}}>
                 <div className="w-4.5 h-4.5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{background:"rgba(255,255,255,.16)",width:18,height:18}}>
                   <svg viewBox="0 0 24 24" className="w-2.5 h-2.5" fill="none" stroke="white" strokeWidth="3"><polyline points="20 6 9 17 4 12"/></svg>

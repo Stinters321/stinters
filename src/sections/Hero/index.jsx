@@ -28,7 +28,7 @@ const Hero = ({openModal,openAuth}) => {
               <h1 className="text-5xl lg:text-[4rem] font-bold text-white leading-[1.1] tracking-tight">
                 We Fix It.<br />
                 We Manage It.<br />
-                We Source It — <span className="text-blue-500">Right Now.</span>
+                We Source It - <span className="text-blue-500">Right Now.</span>
               </h1>
             </div>
 
@@ -41,7 +41,7 @@ const Hero = ({openModal,openAuth}) => {
 
             {/* Description */}
             <p className="text-lg text-[#94979C] max-w-lg leading-relaxed">
-              Machine down? Spare part missing? Facility needs attention? Just tell us — we connect you with verified vendors fast. No calls, no chaos, no waiting.
+              Machine down? Spare part missing? Facility needs attention? Just tell us - we connect you with verified vendors fast. No calls, no chaos, no waiting.
             </p>
 
             {/* Action Buttons */}
@@ -83,7 +83,7 @@ const Hero = ({openModal,openAuth}) => {
                   <Zap size={14} className="text-white" />
                 </div>
                 <div>
-                  <strong className="block font-bold text-[13px] text-white leading-tight">Line 3 — Breakdown</strong>
+                  <strong className="block font-bold text-[13px] text-white leading-tight">Line 3 - Breakdown</strong>
                   <span className="text-[10px] text-white/50">Technician assigned · 42 min</span>
                 </div>
               </div>

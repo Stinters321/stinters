@@ -14,12 +14,12 @@ const Navbar = ({openModal,openAuth}) => {
   }, []);
 
   const navLinks = [
-    { name: 'Services', icon: Wrench },
-    { name: 'Industries', icon: Factory },
-    { name: 'How It Works', icon: FileText },
-    { name: 'Vendors', icon: Handshake },
-    { name: 'FAQ', icon: HelpCircle },
-    { name: 'Contact', icon: Phone },
+    { name: 'Services', icon: Wrench, route:'#Services' },
+    { name: 'Industries', icon: Factory,route:'#Industries' },
+    { name: 'How It Works', icon: FileText,route:'#HowItWorks' },
+    { name: 'Vendors', icon: Handshake,route:'#VendorSection' },
+    { name: 'FAQ', icon: HelpCircle,route:'#Faq' },
+    { name: 'Contact', icon: Phone,route:'#Cta' },
   ];
 
   return (
@@ -32,15 +32,15 @@ const Navbar = ({openModal,openAuth}) => {
         
         {/* Logo Section */}
         <div className="flex flex-col">
-          <img src={Logo} alt="Stintus logo" className='h-20 w-32'/>
+          <img src={Logo} alt="Stintus logo" className='h-14 w-52'/>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8">
           <div className="flex gap-6">
-            {['Services', 'Industries', 'How It Works', 'Vendors', 'FAQ', 'Contact'].map((item) => (
-              <a key={item} href="#" className="px-2 py-1 rounded-lg text-sm font-medium text-[#81858B] hover:text-white hover:bg-[#1A1D23] transition-all duration-300">
-                {item}
+            {navLinks.map((item) => (
+              <a key={item.name} href={item.route} className="px-2 py-1 rounded-lg text-sm font-medium text-[#81858B] hover:text-white hover:bg-[#1A1D23] transition-all duration-300">
+                {item.name}
               </a>
             ))}
           </div>

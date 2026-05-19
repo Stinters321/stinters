@@ -103,7 +103,7 @@ const AuthModal = ({ defaultRole, onClose }) => {
           </div>
         )}
 
-        {/* Sign Up — Client */}
+        {/* Sign Up - Client */}
         {tab === "su" && role === "client" && (
           <div className="px-6 py-5">
             <div className="mb-4">
@@ -140,7 +140,7 @@ const AuthModal = ({ defaultRole, onClose }) => {
           </div>
         )}
 
-        {/* Sign Up — Vendor Multi-step */}
+        {/* Sign Up - Vendor Multi-step */}
         {tab === "su" && role === "vendor" && (
           <div className="px-6 py-5">
             <div className="flex gap-1.5 mb-4">

@@ -2,7 +2,7 @@ import Button from "./Button";
 import { ArrowRight } from "lucide-react";
 const CTA = ({openModal,openAuth}) => {
     return (
-        <div className="flex flex-col h-max w-screen bg-[#0d1420] relative">
+        <div id="Cta" className="flex flex-col h-max w-screen bg-[#0d1420] relative">
             <div className="px-4 py-20 border-b border-white/6 before:absolute before:content-[''] before:inset-0 before:bg-[radial-gradient(ellipse_52%_68%_at_50%_50%,rgba(43,128,237,0.15)_0%,transparent_70%)]">
                 <div className="flex flex-col items-center text-center relative z-1">
                     <div className="flex items-center gap-2 text-[#2B80ED] font-bold text-[11px] tracking-[0.15em] uppercase mb-3">

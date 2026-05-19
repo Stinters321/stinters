@@ -33,7 +33,7 @@ const StepByStep = () => {
         {
             number: '4',
             title: 'Quotes Arrive to Compare',
-            description: 'Multiple quotes with pricing and timelines — all in one place.'
+            description: 'Multiple quotes with pricing and timelines - all in one place.'
         },
         {
             number: '5',
