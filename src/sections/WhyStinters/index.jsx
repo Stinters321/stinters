@@ -21,7 +21,7 @@ const WhyStinters = () => {
     },
     {
         number:'02',
-        icon:<svg width="16" height="16" viewBox="0 0 20 20" className="fill-blue-500"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"></path></svg>,
+        icon:<svg width="16" height="16" viewBox="0 0 20 20" className="fill-blue-500"><path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"></path></svg>,
         title:'Hours, Not Days',
         description:"Vendor assigned in under 6 hours. Stop losing production time chasing people who don't answer."
     },
@@ -33,7 +33,7 @@ const WhyStinters = () => {
     },
     {
         number:'04',
-        icon:<svg width="16" height="16" viewBox="0 0 20 20" className="fill-blue-500"><path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2z"></path></svg>,
+        icon:<svg width="16" height="16" viewBox="0 0 20 20" className="fill-blue-500"><path fillRule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2z"></path></svg>,
         title:'Built for Your Industry',
         description:"Designed for plant managers who need speed and clarity — not complexity."
     },
@@ -45,7 +45,7 @@ const WhyStinters = () => {
     },
     {
         number:'06',
-        icon:<svg width="16" height="16" viewBox="0 0 20 20" className="fill-blue-500"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1z"></path></svg>,
+        icon:<svg width="16" height="16" viewBox="0 0 20 20" className="fill-blue-500"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1z"></path></svg>,
         title:'Your Team Gets Time Back',
         description:"Engineers fix machines, not vendor relationships. Submit once — we handle the rest."
     }

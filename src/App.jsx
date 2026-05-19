@@ -7,6 +7,7 @@ import CTA from './components/CTA'
 import Footer from './components/Footer'
 import WhyStinters from './sections/WhyStinters'
 import StepByStep from './sections/StepByStep'
+import FAQSection from './sections/FAQ'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Industries />
         <WhyStinters />
         <StepByStep />
+        <FAQSection />
         <CTA />
         <Footer />
       </main>
