@@ -16,11 +16,11 @@ const AuthModal = ({ defaultRole, onClose }) => {
   };
   const doSignIn = () => {
     if (!siEmail || !siPass) { alert("Please enter your email and password."); return; }
-    alert("✅ Signed in successfully! Welcome back to your Stinters dashboard."); onClose();
+    alert("✅ Signed in successfully! Welcome back to your Stintus dashboard."); onClose();
   };
   const doSignUp = () => {
     if (!suName || !suPhone) { alert("Please fill in your name and phone number."); return; }
-    alert("✅ Account created! Welcome to Stinters."); onClose();
+    alert("✅ Account created! Welcome to Stintus."); onClose();
   };
   const submitVendor = () => { alert("✅ Vendor registration submitted!\n\nOur team will review your profile within 24–48 hours."); onClose(); };
 

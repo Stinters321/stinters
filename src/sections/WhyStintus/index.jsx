@@ -12,7 +12,7 @@ const InfoCard = ({number,icon,title,description}) => {
     )
 }
 
-const WhyStinters = () => {
+const WhyStintus = () => {
     const cardData=[{
         number:'01',
         icon:<svg width="16" height="16" viewBox="0 0 20 20" className="fill-blue-500"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>,
@@ -58,7 +58,7 @@ const WhyStinters = () => {
                 <div className="mb-14">
                     <div className="flex items-center gap-2 text-[#2B80ED] font-bold text-[11px] tracking-[0.15em] uppercase mb-3">
                         <span className="w-4 h-[2px] bg-[#2B80ED] rounded-full"></span>
-                        WHY STINTERS
+                        WHY STINTUS
                     </div>
 
                     <h2 className="text-[24px] lg:text-[38px] font-bold font-['Sora'] text-[#0F172A] max-w-2xl leading-[1.15] tracking-tight mb-5">
@@ -76,4 +76,4 @@ const WhyStinters = () => {
     )
 }
 
-export default WhyStinters;
+export default WhyStintus;

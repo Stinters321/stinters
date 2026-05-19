@@ -32,9 +32,7 @@ const Navbar = ({openModal,openAuth}) => {
         
         {/* Logo Section */}
         <div className="flex flex-col">
-          {/* <span className="text-2xl font-black text-white tracking-tight">STINTERS</span> */}
           <img src={Logo} alt="Stintus logo" className='h-20 w-32'/>
-          {/* <span className="text-[0.55rem] text-[#4E545C] tracking-widest font-medium uppercase mt-0.5">MRO · Facility · On-Demand Spares</span> */}
         </div>
 
         {/* Desktop Navigation */}
@@ -69,7 +67,7 @@ const Navbar = ({openModal,openAuth}) => {
         <div className="fixed inset-0 z-[60] bg-[#0A101E] p-4 flex flex-col">
           <div className="flex justify-between items-center mb-8">
              <div className="flex flex-col">
-              <span className="text-2xl font-black text-white">STINTERS</span>
+              <span className="text-2xl font-black text-white">Stintus</span>
             </div>
             <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 bg-[#162032] border border-slate-700 rounded-md text-slate-300">
               <X size={20} />

@@ -5,13 +5,14 @@ import HowItWorks from './sections/HowItWorks'
 import Industries from './sections/Industries'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
-import WhyStinters from './sections/WhyStinters'
+import WhyStintus from './sections/WhyStintus'
 import StepByStep from './sections/StepByStep'
 import FAQSection from './sections/FAQ'
 import ServicesSection from './sections/Services'
 import AuthModal from './components/modals/AuthModal'
 import RFQModal from './components/modals/RFQModal'
 import { useState } from 'react'
+import VendorSection from './sections/VendorSection'
 
 function App() {
   const [rfqModal, setRfqModal] = useState(null); // null or service string
@@ -29,8 +30,9 @@ function App() {
         <HowItWorks />
         <ServicesSection openModal={openModal}/>
         <Industries />
-        <WhyStinters />
+        <WhyStintus />
         <StepByStep />
+        <VendorSection openAuth={openAuth}/>
         <FAQSection />
         <CTA openAuth={openAuth} openModal={openModal}/>
         <Footer />
