@@ -3,7 +3,7 @@ import { Menu, X, Phone, HelpCircle, Handshake, FileText, Factory, Wrench } from
 import Button from './Button';
 import Logo from '/logo.png'
 
-const Navbar = () => {
+const Navbar = ({openModal,openAuth}) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -47,8 +47,8 @@ const Navbar = () => {
             ))}
           </div>
           <div className="flex items-center gap-4">
-            <Button variant="outline" className="text-sm">Sign In</Button>
-            <Button variant="primary" className="text-sm">Submit Requirement</Button>
+            <Button variant="outline" className="text-sm" onClick={openAuth}>Sign In</Button>
+            <Button variant="primary" className="text-sm" onClick={()=>openModal("General Requirement")}>Submit Requirement</Button>
           </div>
         </nav>
 

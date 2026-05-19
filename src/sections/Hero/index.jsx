@@ -4,7 +4,7 @@ import Button from '../../components/Button';
 import Tag from './components/Tag';
 import ServiceTicker from './components/ServiceTicker';
 
-const Hero = () => {
+const Hero = ({openModal,openAuth}) => {
   return (
     // Applied the specific hero-bg class here instead of global body
     <section className="relative w-full hero-bg pt-28 flex flex-col justify-between min-h-screen" id='Hero'>
@@ -46,7 +46,7 @@ const Hero = () => {
 
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-4 mt-2">
-              <Button variant="primary" className="gap-2 text-base px-8 py-4">
+              <Button variant="primary" className="gap-2 text-base px-8 py-4" onClick={()=>openModal("General Requirement")}>
                 Submit Requirement <ArrowRight size={18} />
               </Button>
               <Button variant="dark" className="text-base px-8 py-4">
