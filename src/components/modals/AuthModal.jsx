@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Logo from "/logo.png";
 
 const AuthModal = ({ defaultRole, onClose }) => {
   const [role, setRole] = useState(defaultRole || "client");
@@ -49,14 +50,18 @@ const AuthModal = ({ defaultRole, onClose }) => {
   return (
     <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[2000] flex items-center justify-center p-3.5" onClick={e=>e.target===e.currentTarget&&onClose()}>
       <div className="modal-in bg-white rounded-2xl w-full max-w-[500px] max-h-[94vh] overflow-y-auto shadow-2xl">
-        <button onClick={onClose} className="absolute top-3.5 right-3.5 bg-white/10 border border-white/16 text-white w-7 h-7 rounded-lg text-sm flex items-center justify-center hover:bg-white/20 z-10 transition-colors">✕</button>
+        <button onClick={onClose} className="absolute top-3.5 right-3.5 bg-white/10 border border-white/16 text-white w-7 h-7 rounded-lg text-sm flex items-center justify-center hover:bg-white/20 z-10 transition-colors cursor-pointer">✕</button>
 
         {/* Auth Hero */}
         <div className="relative rounded-t-2xl px-7 pt-7 pb-6 overflow-hidden text-center" style={{ background: "linear-gradient(135deg,#131C2E,#1a2d4a)" }}>
           <div className="absolute -top-10 -right-10 w-44 h-44 rounded-full pointer-events-none" style={{ background: "rgba(43,128,237,.12)" }} />
           <div className="absolute -bottom-8 -left-8 w-28 h-28 rounded-full pointer-events-none" style={{ background: "rgba(43,128,237,.08)" }} />
-          <div className="sora font-extrabold text-[1.15rem] text-white tracking-tight mb-4 relative z-10">
-            STINT<span className="text-blue-400">ERS</span>
+          <div className="mb-4 relative z-10 flex justify-center w-full">
+            <img
+              src={Logo}
+              alt="Stintus logo"
+              className="h-12 w-auto object-contain"
+            />
           </div>
           <div className="grid grid-cols-2 gap-2.5 mb-1 relative z-10">
             {[["client","🏭","I'm a Client","I need vendors for MRO, facility management, or industrial spares"],

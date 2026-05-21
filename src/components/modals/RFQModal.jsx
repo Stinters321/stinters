@@ -34,7 +34,7 @@ const RFQModal = ({ service, onClose }) => {
                     </div>
                     <h3 className="sora text-white font-bold text-base mb-0.5">{service || "General Requirement"}</h3>
                     <p className="dm text-white/40 text-xs">Fill in the details below - takes under 2 minutes</p>
-                    <button onClick={onClose} className="absolute top-3.5 right-3.5 bg-white/10 border border-white/16 text-white w-7 h-7 rounded-lg text-sm flex items-center justify-center hover:bg-white/20 transition-colors">✕</button>
+                    <button onClick={onClose} className="absolute top-3.5 right-3.5 bg-white/10 border border-white/16 text-white w-7 h-7 rounded-lg text-sm flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">✕</button>
                 </div>
 
                 {/* Body */}

@@ -1,10 +1,10 @@
-import Navbar from './components/Navbar'
+import Navbar from './components/layout/Navbar'
 import Challenge from './sections/Challenge'
 import Hero from './sections/Hero'
 import HowItWorks from './sections/HowItWorks'
 import Industries from './sections/Industries'
 import CTA from './components/CTA'
-import Footer from './components/Footer'
+import Footer from './components/layout/Footer'
 import WhyStintus from './sections/WhyStintus'
 import StepByStep from './sections/StepByStep'
 import FAQSection from './sections/FAQ'
@@ -15,7 +15,7 @@ import { useState } from 'react'
 import VendorSection from './sections/VendorSection'
 
 function App() {
-  const [rfqModal, setRfqModal] = useState(null); // null or service string
+  const [rfqModal, setRfqModal] = useState(null);
   const [authModal, setAuthModal] = useState(false);
   const [authRole, setAuthRole] = useState("client");
 
@@ -23,18 +23,18 @@ function App() {
   const openAuth = (role) => { if (role) setAuthRole(role); setAuthModal(true); };
   return (
     <div className="min-h-screen flex flex-col relative overflow-hidden">
-      <Navbar openAuth={openAuth} openModal={openModal}/>
+      <Navbar openAuth={openAuth} openModal={openModal} />
       <main className="flex-grow">
-        <Hero openAuth={openAuth} openModal={openModal}/>
+        <Hero openAuth={openAuth} openModal={openModal} />
         <Challenge />
         <HowItWorks />
-        <ServicesSection openModal={openModal}/>
+        <ServicesSection openModal={openModal} />
         <Industries />
         <WhyStintus />
         <StepByStep />
-        <VendorSection openAuth={openAuth}/>
+        <VendorSection openAuth={openAuth} />
         <FAQSection />
-        <CTA openAuth={openAuth} openModal={openModal}/>
+        <CTA openAuth={openAuth} openModal={openModal} />
         <Footer />
       </main>
       {rfqModal && <RFQModal service={rfqModal} onClose={() => setRfqModal(null)} />}
