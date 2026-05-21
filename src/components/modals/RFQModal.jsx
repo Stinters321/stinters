@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { db } from "../../config/firebase";
+import { collection,addDoc } from "firebase/firestore";
+import { nanoid } from "nanoid";
 const SQ = {
     "Motor Repair & Rewind": [{ l: "Motor Brand", p: "e.g. Siemens, ABB" }, { l: "Power Rating (kW)", p: "e.g. 22kW" }, { l: "Issue", p: "e.g. overheating, not starting" }],
     "Gearbox Maintenance": [{ l: "Gearbox Make", p: "e.g. Brevini, SEW" }, { l: "Issue", p: "e.g. oil leak, noise" }, { l: "Last Serviced", p: "e.g. 6 months ago" }],
@@ -18,10 +21,19 @@ const RFQModal = ({ service, onClose }) => {
     const [desc, setDesc] = useState("");
     const dynFields = SQ[service] || [];
 
-    const handleSubmit = () => {
+    const handleSubmit = async() => {
         if (!name || !phone || !desc) { alert("Please fill in your name, phone number, and describe your requirement."); return; }
-        alert("✅ Requirement submitted!\n\nOur team will assign a verified vendor and contact you within 6 hours.\n\nYour account has been created - sign in anytime to track your requirements.");
-        onClose();
+        try{
+            const formCollectionRef=collection(db,'formData');
+            const data={enquiryId:nanoid(16),name,phone,email,description:desc,service,createdAt:new Date().toISOString()}
+
+            await addDoc(formCollectionRef,data);
+        }catch(error){
+            console.log('error:',error);
+        }finally{
+            alert("✅ Requirement submitted!\n\nOur team will assign a verified vendor and contact you within 6 hours.\n\nYour account has been created - sign in anytime to track your requirements.");
+            onClose();
+        }
     };
 
     return (
