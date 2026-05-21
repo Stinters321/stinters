@@ -2,9 +2,11 @@ import React from 'react';
 
 const Tag = ({ icon: Icon, text }) => {
   return (
-    <div className="flex items-center gap-2 bg-[#1C222C] border border-slate-700/50 rounded-full px-4 py-1.5 w-fit">
-      {Icon && <Icon size={14} className="text-[#94979C]" />}
-      <span className="text-sm text-[#94979C] font-medium">{text}</span>
+    <div className="flex items-center gap-1.5 sm:gap-2 bg-[#162032] border border-slate-700/50 rounded-full px-3 py-1.5 sm:px-4 w-fit transition-all whitespace-nowrap">
+      {Icon && <Icon className="text-slate-400 w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />}
+      <span className="text-xs sm:text-sm text-slate-300 font-medium">
+        {text}
+      </span>
     </div>
   );
 };
