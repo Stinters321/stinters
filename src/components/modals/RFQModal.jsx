@@ -1,31 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { db } from "../../config/firebase";
 import { collection,addDoc } from "firebase/firestore";
 import { nanoid } from "nanoid";
 const SQ = {
-    "Motor Repair & Rewind": [{ l: "Motor Brand", p: "e.g. Siemens, ABB" }, { l: "Power Rating (kW)", p: "e.g. 22kW" }, { l: "Issue", p: "e.g. overheating, not starting" }],
-    "Gearbox Maintenance": [{ l: "Gearbox Make", p: "e.g. Brevini, SEW" }, { l: "Issue", p: "e.g. oil leak, noise" }, { l: "Last Serviced", p: "e.g. 6 months ago" }],
-    "PLC Troubleshooting": [{ l: "PLC Brand", p: "e.g. Siemens, Allen Bradley" }, { l: "Model", p: "e.g. S7-300" }, { l: "Error Code", p: "e.g. F0001 (if any)" }],
-    "Three Phase Electrical Work": [{ l: "Type of Work", p: "e.g. new installation, repair" }, { l: "Load (kW)", p: "e.g. 15kW" }, { l: "Location in Facility", p: "e.g. Panel room" }],
-    "AMC Contract": [{ l: "No. of Machines", p: "e.g. 12" }, { l: "Machine Types", p: "e.g. compressors, motors" }, { l: "Contract Duration", p: "e.g. 1 year" }],
-    "CNC Machining": [{ l: "Material", p: "e.g. MS, SS, Aluminium" }, { l: "Quantity", p: "e.g. 10 pieces" }, { l: "Drawing Available?", p: "Yes / No" }],
-    "Emergency Repair": [{ l: "What broke down?", p: "Brief description" }, { l: "Production stopped?", p: "Yes / Partially / No" }, { l: "Your exact location", p: "e.g. GIDC Vatva, Ahmedabad" }],
-    "AC Maintenance": [{ l: "No. of AC Units", p: "e.g. 5" }, { l: "Capacity (Ton)", p: "e.g. 2 ton each" }, { l: "Brand", p: "e.g. Daikin, Voltas" }, { l: "Last Serviced", p: "e.g. 1 year ago" }],
-    "Bearings Supply": [{ l: "Bearing Type", p: "e.g. deep groove, taper" }, { l: "Part No. / Size", p: "e.g. 6205, 25x52x15" }, { l: "Quantity", p: "e.g. 10 pcs" }],
-    "Boiler Tubes": [{ l: "Tube Size/Grade", p: "e.g. 51mm OD, SA210" }, { l: "Length", p: "e.g. 6 metres" }, { l: "Quantity", p: "e.g. 20 tubes" }],
+    "Motor Repair & Rewind": [{ l: "Motor Brand", p: "e.g. Siemens, ABB",name:'motorBrand' }, { l: "Power Rating (kW)", p: "e.g. 22kW",name:'powerRating' }, { l: "Issue", p: "e.g. overheating, not starting",name:'issue' }],
+    "Gearbox Maintenance": [{ l: "Gearbox Brand", p: "e.g. Brevini, SEW",name:'gearboxBrand' }, { l: "Issue", p: "e.g. oil leak, noise",name:'issue' }, { l: "Last Serviced", p: "e.g. 6 months ago",name:'lastServicedAt' }],
+    "PLC Troubleshooting": [{ l: "PLC Brand", p: "e.g. Siemens, Allen Bradley",name:'plcBrand' }, { l: "Model", p: "e.g. S7-300",name:'model' }, { l: "Error Code", p: "e.g. F0001 (if any)",name:'errorCode' }],
+    "Three Phase Electrical Work": [{ l: "Type of Work", p: "e.g. new installation, repair",name:'typeOfWork' }, { l: "Load (kW)", p: "e.g. 15kW",name:'load' }, { l: "Location in Facility", p: "e.g. Panel room",name:'locationInFacility' }],
+    "AMC Contract": [{ l: "No. of Machines", p: "e.g. 12",name:'machineCount' }, { l: "Machine Types", p: "e.g. compressors, motors",name:'machineType' }, { l: "Contract Duration", p: "e.g. 1 year",name:'contractDuration' }],
+    "CNC Machining": [{ l: "Material", p: "e.g. MS, SS, Aluminium",name:'cncMachining' }, { l: "Quantity", p: "e.g. 10 pieces",name:'quantity' }, { l: "Drawing Available?", p: "Yes / No",name:'isDrawingAvailable' }],
+    "Emergency Repair": [{ l: "What broke down?", p: "Brief description",name:'whatBrokeDown' }, { l: "Production stopped?", p: "Yes / Partially / No",name:'isProductionStopped' }, { l: "Your exact location", p: "e.g. GIDC Vatva, Ahmedabad",name:'exactLocation' }],
+    "AC Maintenance": [{ l: "No. of AC Units", p: "e.g. 5",name:'acMaintainance' }, { l: "Capacity (Ton)", p: "e.g. 2 ton each",name:'capacity' }, { l: "Brand", p: "e.g. Daikin, Voltas",name:'brand' }, { l: "Last Serviced", p: "e.g. 1 year ago",name:'lastServicedAt' }],
+    "Bearings Supply": [{ l: "Bearing Type", p: "e.g. deep groove, taper",name:'bearingType' }, { l: "Part No. / Size", p: "e.g. 6205, 25x52x15",name:'partNumOrSize' }, { l: "Quantity", p: "e.g. 10 pcs",name:'quantity' }],
+    "Boiler Tubes": [{ l: "Tube Size/Grade", p: "e.g. 51mm OD, SA210",name:'tubeSizeOrGrade' }, { l: "Length", p: "e.g. 6 metres",name:'length' }, { l: "Quantity", p: "e.g. 20 tubes",name:'quantity' }],
 };
 const RFQModal = ({ service, onClose }) => {
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
     const [desc, setDesc] = useState("");
+    const [dynamicFieldData,setDynamicFieldData]=useState({});
     const dynFields = SQ[service] || [];
 
     const handleSubmit = async() => {
         if (!name || !phone || !desc) { alert("Please fill in your name, phone number, and describe your requirement."); return; }
         try{
             const formCollectionRef=collection(db,'formData');
-            const data={enquiryId:nanoid(16),name,phone,email,description:desc,service,createdAt:new Date().toISOString()}
+            const data={...dynamicFieldData,enquiryId:nanoid(16),name,phone,email,description:desc,service,createdAt:new Date().toISOString()}
 
             await addDoc(formCollectionRef,data);
         }catch(error){
@@ -35,6 +36,15 @@ const RFQModal = ({ service, onClose }) => {
             onClose();
         }
     };
+
+    const handleDynamicFieldChange=(e)=>{
+        const {name,value}=e.target;
+        setDynamicFieldData((prev)=>({...prev,[name]:value}));
+    }
+
+    // useEffect(()=>{
+    //     console.log('fieldData:',dynamicFieldData);
+    // },[dynamicFieldData]);
 
     return (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[2000] flex items-center justify-center p-3.5" onClick={(e) => e.target === e.currentTarget && onClose()}>
@@ -57,7 +67,7 @@ const RFQModal = ({ service, onClose }) => {
                             {dynFields.map((f, i) => (
                                 <div key={i} className="flex flex-col gap-1 mb-3">
                                     <label className="sora text-[.69rem] font-bold text-slate-900">{f.l}</label>
-                                    <input type="text" placeholder={f.p} className="dm text-sm bg-slate-50 border-[1.5px] border-slate-200 rounded-lg px-3 py-2.5 w-full outline-none focus:border-blue-400 focus:bg-white focus:shadow-[0_0_0_3px_rgba(43,128,237,.1)] transition-all" />
+                                    <input type="text" placeholder={f.p} name={f.name} value={dynamicFieldData[f.name] || ''} onChange={e => handleDynamicFieldChange(e)} className="dm text-sm bg-slate-50 border-[1.5px] border-slate-200 rounded-lg px-3 py-2.5 w-full outline-none focus:border-blue-400 focus:bg-white focus:shadow-[0_0_0_3px_rgba(43,128,237,.1)] transition-all" />
                                 </div>
                             ))}
                         </div>
