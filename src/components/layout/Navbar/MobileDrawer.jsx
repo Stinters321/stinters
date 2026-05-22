@@ -3,7 +3,7 @@ import { X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from '../../Button';
 import Logo from '/logo.png';
-import { handleSmoothScroll } from './utils';
+import { handleSmoothScroll } from '../utils/utils';
 
 const MobileDrawer = ({ isOpen, setIsOpen, navLinks, openModal, openAuth }) => {
     return (

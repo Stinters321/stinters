@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Menu } from 'lucide-react';
 import Logo from '/logo.png';
 import { navLinks } from './data';
-import { handleSmoothScroll } from './utils';
+import { handleSmoothScroll } from '../utils/utils';
 import MobileDrawer from './MobileDrawer';
 import Button from '../../Button';
 
